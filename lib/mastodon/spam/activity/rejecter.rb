@@ -43,6 +43,3 @@ module Mastodon
     end
   end
 end
-
-
-ActivityPub::Activity::Create.prepend(Mastodon::Spam::Activity::Rejecter)
