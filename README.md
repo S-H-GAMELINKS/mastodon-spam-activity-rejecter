@@ -1,24 +1,20 @@
 # Mastodon::Spam::Activity::Rejecter
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mastodon/spam/activity/rejecter`. To experiment with that code, run `bin/console` for an interactive prompt.
+Reject spam activity for Mastodon 
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+```Gemfile
+gem 'mastodon-spam-activity-rejecter', github: 'S-H-GAMELINKS/mastodon-spam-activity-rejecter', branch: :master
+```
 
-Install the gem and add to the application's Gemfile by executing:
+```ruby
+class ActivityPub::Activity::Create < ActivityPub::Activity
+  prepend Mastodon::Spam::Activity::Rejecter
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-
-## Usage
-
-TODO: Write usage instructions here
+　# ...
+end
+```
 
 ## Development
 
@@ -32,4 +28,13 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [AGPL License](https://opensource.org/licenses/AGPL).
+
+## Original Author
+
+[rosylilly](https://github.com/rosylilly)
+
+## Original Code
+
+[Reject spammer](https://github.com/best-friends/mastodon/pull/1941)
+
