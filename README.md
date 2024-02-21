@@ -38,3 +38,5 @@ The gem is available as open source under the terms of the [AGPL License](https:
 
 [Reject spammer](https://github.com/best-friends/mastodon/pull/1941)
 
+[mastodon/mastodon](https://github.com/mastodon/mastodon)
+
