@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary = "mastodon spam activity rejecter."
   spec.description = "mastodon spam activity rejecter"
   spec.homepage = "https://github.com/S-H-GAMELINKS/mastodon-spam-activity-rejecter"
-  spec.license = "MIT"
+  spec.license = "AGPL"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "https://github.com/S-H-GAMELINKS/mastodon-spam-activity-rejecter"
