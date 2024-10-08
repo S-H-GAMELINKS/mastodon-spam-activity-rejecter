@@ -9,26 +9,25 @@ module Mastodon
         def process_status
           @tags                 = []
           @mentions             = []
+          @unresolved_mentions  = []
           @silenced_account_ids = []
           @params               = {}
-      
+
           process_status_params
           process_tags
           process_audience
-      
+
           ApplicationRecord.transaction do
             @status = Status.create!(@params)
             attach_tags(@status)
-
             if like_a_spam?
               @status = nil
               raise ActiveRecord::Rollback
             end
           end
 
-          return if @status.nil?
-      
           resolve_thread(@status)
+          resolve_unresolved_mentions(@status)
           fetch_replies(@status)
           distribute
           forward_for_reply
