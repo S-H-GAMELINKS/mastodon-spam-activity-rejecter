@@ -26,6 +26,8 @@ module Mastodon
             end
           end
 
+          return if @status.nil?
+
           resolve_thread(@status)
           resolve_unresolved_mentions(@status)
           fetch_replies(@status)
