@@ -20,6 +20,7 @@ module Mastodon
           ApplicationRecord.transaction do
             @status = Status.create!(@params)
             attach_tags(@status)
+            attach_counts(@status)
             if like_a_spam?
               @status = nil
               raise ActiveRecord::Rollback
